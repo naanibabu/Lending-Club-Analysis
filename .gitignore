@@ -1,0 +1,13 @@
+# Large datasets
+Data/*.csv
+cleaned_data.csv
+
+# Power BI temporary/backup files
+*.pbit
+
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
