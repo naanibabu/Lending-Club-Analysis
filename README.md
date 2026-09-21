@@ -18,7 +18,7 @@
 <br>
 
 <p align="center">
-  <img src="DashboardScreenshots/Risk_ananlysis.png" width="850">
+  <img src="DashboardScreeshots/Risk_ananlysis.png" width="850">
 </p>
 
 <br>
@@ -62,7 +62,7 @@ This analysis was built to directly answer four questions a real lending busines
 - **Debt consolidation dominates the book** at $11B of $18.5B total funded — more than double the next-largest category — a concentration risk worth watching.
 - **The pricing gap may not be enough.** Charged-off borrowers paid only a 3-point higher average interest rate (16% vs. 13%), despite carrying meaningfully worse FICO, DTI, and income profiles — raising the question of whether risk is being priced correctly.
 
-📄 📄 *Full breakdown with supporting numbers in the [PDF case study](./LendingClub_Case_Study.pdf#page=8).*
+📄 *Full breakdown with supporting numbers in the [PDF case study](./LC_report.pdf#page=8).*
 
 <br>
 
@@ -71,17 +71,17 @@ This analysis was built to directly answer four questions a real lending busines
 ### 1️⃣ Risk Analysis
 Breaks down default rate by loan purpose, DTI band, FICO band, and loan grade — pinpointing exactly which borrower segments carry disproportionate risk.
 
-<p align="center"><img src="DashboardScreenshots/Risk_ananlysis.png" width="800"></p>
+<p align="center"><img src="DashboardScreeshots/Risk_ananlysis.png" width="800"></p>
 
 ### 2️⃣ Portfolio Growth
 Tracks origination volume, funded amount, and average loan size from 2007–2018, plus a breakdown of what's driving growth by loan purpose.
 
-<p align="center"><img src="DashboardScreenshots/Portfolio_growth.png" width="800"></p>
+<p align="center"><img src="DashboardScreeshots/Portfolio_growth.png" width="800"></p>
 
 ### 3️⃣ Borrower Profile
 A direct side-by-side comparison of Fully Paid vs. Charged Off borrowers across income, DTI, FICO, revolving balance, interest rate, and credit utilisation.
 
-<p align="center"><img src="DashboardScreenshots/Borrower_profile.png" width="650"></p>
+<p align="center"><img src="DashboardScreeshots/Borrower_profile.png" width="650"></p>
 
 <br>
 
@@ -263,11 +263,11 @@ The dashboard's look was deliberately built rather than left to Power BI default
 - **Custom navigation** — built with Power BI's Navigator, active page highlighted in orange
 - **Custom tooltips** — black background, orange values, replacing Power BI's default white tooltip box
 
-<p align="center"><img src="DashboardScreenshots/Tool_tip.png" width="450"></p>
+<p align="center"><img src="DashboardScreeshots/Tool_tip.png" width="450"></p>
 
 - **Custom in-bar chart labels** — the *Default Percentage by Purpose* chart uses a zero-value placeholder measure to create bar spacing, plus a DAX-built label placed directly on each bar instead of the default axis-end label:
 
-<p align="center"><img src="DashboardScreenshots/PurposeVsDefault.png" width="300"></p>
+<p align="center"><img src="DashboardScreeshots/PurposeVsDefault.png" width="300"></p>
 
 <br>
 
@@ -286,7 +286,7 @@ The dashboard's look was deliberately built rather than left to Power BI default
 ```text
 ├── .gitignore
 ├── README.md
-├── LC_report.pdf
+├── Loan Portfolio Risk and Performance Analytics - LendingClub Case Study.pdf
 ├── lending_club_dashboard.pbix
 │
 ├── Dashboard_Screenshots/
@@ -300,7 +300,9 @@ The dashboard's look was deliberately built rather than left to Power BI default
 │   └── ...
 │
 └── Data/
-    └── accepted_2007_to_2018Q4.csv    # Raw dataset (not included in GitHub)
+    ├── Data_cleaninig.py
+    ├── Data_cleaning.ipynb
+    └── accepted_2007_to_2018Q4.csv
 ```
 
 
@@ -313,13 +315,16 @@ The dashboard's look was deliberately built rather than left to Power BI default
 
 1. Download the **Lending Club accepted loans dataset** from Kaggle and place `accepted_2007_to_2018Q4.csv` inside the local `Data/` folder.
 
-2. Open `lending_club_dashboard.pbix` in **Power BI Desktop**.
+2. Run the **`Data_cleaninig.py`** script located inside the `Data/` folder.  
+   The script cleans and transforms the raw dataset and generates the `cleaned_data.csv` file.
 
-3. Update the data source path if required so Power BI points to the local dataset.
+3. Open `lending_club_dashboard.pbix` in **Power BI Desktop**.
 
-4. Refresh the Power BI dashboard to load the data and reproduce the analysis.
+4. Update the data source path in Power BI so that it points to the generated `cleaned_data.csv` file.
 
-> **Note:** The raw dataset and cleaned dataset are not included in this repository because of their large file sizes. The dataset remains in the local `Data/` folder and is excluded through `.gitignore`.
+5. Refresh the Power BI dashboard to load the cleaned data and reproduce the analysis.
+
+> **Note:** The raw dataset and generated `cleaned_data.csv` are not included in this repository because of their large file sizes. The raw dataset should be placed in the local `Data/` folder, while `cleaned_data.csv` is generated locally by the Python cleaning script. Both files are excluded through `.gitignore`.
 
 
 <br>
