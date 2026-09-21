@@ -81,7 +81,7 @@ Tracks origination volume, funded amount, and average loan size from 2007–2018
 ### 3️⃣ Borrower Profile
 A direct side-by-side comparison of Fully Paid vs. Charged Off borrowers across income, DTI, FICO, revolving balance, interest rate, and credit utilisation.
 
-<p align="center"><img src="DashboardScreeshots/Borrower_profile.png" width="650"></p>
+<p align="center"><img src="DashboardScreeshots/Borrower_profile.png" width="800"></p>
 
 <br>
 
