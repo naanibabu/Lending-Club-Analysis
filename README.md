@@ -11,7 +11,7 @@
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
 ![DAX](https://img.shields.io/badge/DAX-233D4D?style=for-the-badge&logo=microsoft&logoColor=white)
 
-📄 📄 [**Read the Full Case Study (PDF)**](./LendingClub_Case_Study.pdf) &nbsp;|&nbsp; 📊 [**View Interactive Dashboard**](#) &nbsp;|&nbsp; 💼 [**Connect on LinkedIn**](#)
+📄  [**Read the Full Case Study (PDF)**](./LC_report.pdf) &nbsp;|&nbsp; 📊 [**View Interactive Dashboard**](#) &nbsp;|&nbsp; 💼 [**Connect on LinkedIn**](#)
 
 </div>
 
