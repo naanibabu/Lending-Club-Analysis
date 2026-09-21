@@ -11,14 +11,14 @@
 ![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
 ![DAX](https://img.shields.io/badge/DAX-233D4D?style=for-the-badge&logo=microsoft&logoColor=white)
 
-📄 [**Read the Full Case Study (PDF)**](./Loan%20Portfolio%20Risk%20and%20Performance%20Analytics%20-%20LendingClub%20Case%20Study.pdf) &nbsp;|&nbsp; 📊 [**View Interactive Dashboard**](#) &nbsp;|&nbsp; 💼 [**Connect on LinkedIn**](#)
+📄 📄 [**Read the Full Case Study (PDF)**](./LendingClub_Case_Study.pdf) &nbsp;|&nbsp; 📊 [**View Interactive Dashboard**](#) &nbsp;|&nbsp; 💼 [**Connect on LinkedIn**](#)
 
 </div>
 
 <br>
 
 <p align="center">
-  <img src="assets/risk_analysis.png" width="850">
+  <img src="DashboardScreenshots/Risk_ananlysis.png" width="850">
 </p>
 
 <br>
@@ -62,7 +62,7 @@ This analysis was built to directly answer four questions a real lending busines
 - **Debt consolidation dominates the book** at $11B of $18.5B total funded — more than double the next-largest category — a concentration risk worth watching.
 - **The pricing gap may not be enough.** Charged-off borrowers paid only a 3-point higher average interest rate (16% vs. 13%), despite carrying meaningfully worse FICO, DTI, and income profiles — raising the question of whether risk is being priced correctly.
 
-📄 *Full breakdown with supporting numbers in the [PDF case study](./Loan%20Portfolio%20Risk%20and%20Performance%20Analytics%20-%20LendingClub%20Case%20Study.pdf#page=8).*
+📄 📄 *Full breakdown with supporting numbers in the [PDF case study](./LendingClub_Case_Study.pdf#page=8).*
 
 <br>
 
@@ -71,17 +71,17 @@ This analysis was built to directly answer four questions a real lending busines
 ### 1️⃣ Risk Analysis
 Breaks down default rate by loan purpose, DTI band, FICO band, and loan grade — pinpointing exactly which borrower segments carry disproportionate risk.
 
-<p align="center"><img src="assets/risk_analysis.png" width="800"></p>
+<p align="center"><img src="DashboardScreenshots/Risk_ananlysis.png" width="800"></p>
 
 ### 2️⃣ Portfolio Growth
 Tracks origination volume, funded amount, and average loan size from 2007–2018, plus a breakdown of what's driving growth by loan purpose.
 
-<p align="center"><img src="assets/portfolio_growth.png" width="800"></p>
+<p align="center"><img src="DashboardScreenshots/Portfolio_growth.png" width="800"></p>
 
 ### 3️⃣ Borrower Profile
 A direct side-by-side comparison of Fully Paid vs. Charged Off borrowers across income, DTI, FICO, revolving balance, interest rate, and credit utilisation.
 
-<p align="center"><img src="assets/borrower_profile.png" width="650"></p>
+<p align="center"><img src="DashboardScreenshots/Borrower_profile.png" width="650"></p>
 
 <br>
 
@@ -263,11 +263,11 @@ The dashboard's look was deliberately built rather than left to Power BI default
 - **Custom navigation** — built with Power BI's Navigator, active page highlighted in orange
 - **Custom tooltips** — black background, orange values, replacing Power BI's default white tooltip box
 
-<p align="center"><img src="assets/custom_tooltip.png" width="450"></p>
+<p align="center"><img src="DashboardScreenshots/Tool_tip.png" width="450"></p>
 
 - **Custom in-bar chart labels** — the *Default Percentage by Purpose* chart uses a zero-value placeholder measure to create bar spacing, plus a DAX-built label placed directly on each bar instead of the default axis-end label:
 
-<p align="center"><img src="assets/default_percentage_by_purpose.png" width="300"></p>
+<p align="center"><img src="DashboardScreenshots/PurposeVsDefault.png" width="300"></p>
 
 <br>
 
@@ -283,17 +283,27 @@ The dashboard's look was deliberately built rather than left to Power BI default
 
 ## 📁 Repository Structure
 
+```text
+├── .gitignore
+├── README.md
+├── LC_report.pdf
+├── lending_club_dashboard.pbix
+│
+├── Dashboard_Screenshots/
+│   ├── Borrower_profile.png
+│   ├── Portfolio_growth.png
+│   ├── PurposeVsDefault.png
+│   ├── Risk_ananlysis.png
+│   └── Tool_tip.png
+│
+├── Canvas_background/
+│   └── ...
+│
+└── Data/
+    └── accepted_2007_to_2018Q4.csv    # Raw dataset (not included in GitHub)
 ```
-├── data/
-│   └── accepted_2007_to_2018Q4.csv     # Raw dataset (not included — see below)
-├── scripts/
-│   └── data_cleaning.py                # Python cleaning & feature engineering
-├── dashboard/
-│   └── LendingClub_Risk_Dashboard.pbix # Power BI dashboard file
-├── assets/                             # Dashboard screenshots used in this README
-├── Loan Portfolio Risk and Performance Analytics - LendingClub Case Study.pdf
-└── README.md
-```
+
+
 
 > 📦 **Dataset:** Sourced from [LendingClub's public loan data on Kaggle](https://www.kaggle.com/datasets/wordsforthewise/lending-club). Not included in this repo due to file size — download separately and place in `/data`.
 
@@ -301,10 +311,16 @@ The dashboard's look was deliberately built rather than left to Power BI default
 
 ## 🚀 Reproducing This Project
 
-1. Download the dataset from Kaggle and place it in `/data`
-2. Run `scripts/data_cleaning.py` to generate `cleaned_data.csv`
-3. Open `dashboard/LendingClub_Risk_Dashboard.pbix` in Power BI Desktop
-4. Load `cleaned_data.csv` as the data source and refresh
+1. Download the **Lending Club accepted loans dataset** from Kaggle and place `accepted_2007_to_2018Q4.csv` inside the local `Data/` folder.
+
+2. Open `lending_club_dashboard.pbix` in **Power BI Desktop**.
+
+3. Update the data source path if required so Power BI points to the local dataset.
+
+4. Refresh the Power BI dashboard to load the data and reproduce the analysis.
+
+> **Note:** The raw dataset and cleaned dataset are not included in this repository because of their large file sizes. The dataset remains in the local `Data/` folder and is excluded through `.gitignore`.
+
 
 <br>
 
@@ -318,8 +334,8 @@ The dashboard's look was deliberately built rather than left to Power BI default
 
 ### 📬 Let's Connect
 
-**[Your Name]** — Data Analyst  
-[LinkedIn](#) &nbsp;•&nbsp; [Portfolio](#) &nbsp;•&nbsp; [Email](#)
+**[Ghantasala Nani Babu]** — Data Analyst  
+[LinkedIn](https://www.linkedin.com/in/ghantasala-nani-babu-b87760255/) &nbsp;•&nbsp; [Portfolio](https://github.com/naanibabu) &nbsp;•&nbsp; [Email](mailto:ghantasalananibabu@gmail.com)
 
 *If this project is useful or interesting, a ⭐ on the repo is appreciated!*
 
